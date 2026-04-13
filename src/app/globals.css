@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .container {
+    @apply mx-auto;
+  }
+
+  section.about p {
+    @apply mb-4 font-light text-lg/[96%];
+  }
+
+  div.divider {
+    @apply h-1;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  section.about p {
+    @apply max-w-[75%]
+  }
+}
+
+:root {
+  --header-height: 96px;
+
+  --primary-1: #F8F0FF;
+  --primary-2: #F3E8FF;
+  --primary-3: #DCBFFF;
+  --primary-4: #C296FF;
+  --primary-5: #A56EFF;
+  --primary-6: #8544FD;
+  --primary-7: #642FD6;
+  --primary-8: #471EB0;
+  --primary-9: #2F118A;
+  --primary-10: #1E0B63;
+
+  --neutral-1: white;
+  --neutral-3: #F5F5F5;
+  --neutral-5: #ccc;
+}
+
+.dark {
+  --header-height: 96px;
+
+  --primary-1: #1C162B;
+  --primary-2: #281B45;
+  --primary-3: #36225A;
+  --primary-4: #472A7D;
+  --primary-5: #5D33AC;
+  --primary-6: #743DDA;
+  --primary-7: #9765E8;
+  --primary-8: #B990F3;
+  --primary-9: #D6BAF8;
+  --primary-10: #EFE4FA;
+
+  --neutral-1: #000000;
+  --neutral-3: #1F1F1F;
+  --neutral-5: #202020ff;
+}
+
+@theme {
+  --font-primary: var(--font-dm-sans);
+
+  --color-primary-1: var(--primary-1);
+  --color-primary-2: var(--primary-2);
+  --color-primary-3: var(--primary-3);
+  --color-primary-4: var(--primary-4);
+  --color-primary-5: var(--primary-5);
+  --color-primary-6: var(--primary-6);
+  --color-primary-7: var(--primary-7);
+  --color-primary-8: var(--primary-8);
+  --color-primary-9: var(--primary-9);
+  --color-primary-10: var(--primary-10);
+
+  --color-neutral-1: var(--neutral-1);
+  --color-neutral-3: var(--neutral-3);
+  --color-neutral-5: var(--neutral-5);
+}
+
+@prefers-color-scheme body {
+  font-family: "DM Sans", Arial;
+}
+
+* {
+  font-family: "DM Sans", Arial;
+}
+
+form button{
+  border: 1px solid #d9d9d9 !important;
+}
+
+div.post-container .post-content img{
+  @apply rounded-xl;
+}
+
+/* 
+header {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+} */
