@@ -8,7 +8,7 @@
   }
 
   section.about p {
-    @apply mb-4 font-light text-lg/[96%];
+    @apply mb-5 font-light text-base/[155%] lg:text-lg/[150%];
   }
 
   div.divider {
@@ -17,6 +17,10 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .container {
+    max-width: 100rem;
+  }
+
   section.about p {
     @apply max-w-[75%]
   }

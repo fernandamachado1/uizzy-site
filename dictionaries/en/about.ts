@@ -1,4 +1,5 @@
 export default {
+    historyLabel: "Our Story",
     aboutTitle: "Discover Our Journey",
 
     aboutDesc1: "At Uizzy, we believe technology only makes sense when it drives real impact. That’s why, since day one, we’ve combined technical excellence, active listening, and a strategic mindset to turn challenges into custom digital solutions.",

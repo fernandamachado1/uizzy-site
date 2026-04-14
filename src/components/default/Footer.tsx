@@ -10,9 +10,10 @@ export default function Footer() {
     const translation = useTranslations("_static");
 
     return <footer className="
-        flex flex-col items-center justify-center 
-        bg-primary-2 dark:bg-[#1E0B63] 
-        text-primary-10 dark:text-[#F3E8FF] 
+        flex flex-col items-center justify-center
+        border-t border-primary-3/40 dark:border-primary-3/30
+        bg-primary-2 dark:bg-primary-1
+        text-primary-10 dark:text-[#F3E8FF]
         p-4 gap-y-2"
     >
         <div className="flex items-center justify-center gap-x-2 text-2xl">

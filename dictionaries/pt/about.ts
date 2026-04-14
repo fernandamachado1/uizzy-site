@@ -1,4 +1,5 @@
 export default {
+    historyLabel: "Nossa História",
     aboutTitle: "Conheça Nossa Jornada",
 
     aboutDesc1: "Na Uizzy, acreditamos que soluções tecnológicas só fazem sentido quando têm impacto real. Por isso, desde o início da nossa jornada, unimos excelência técnica, escuta ativa e olhar estratégico para transformar desafios em sistemas digitais sob medida.",

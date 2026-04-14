@@ -2,7 +2,7 @@ import { DownOutlined } from "@ant-design/icons";
 import { Button, ConfigProvider, Dropdown } from "@/lib/antd";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { LanguagesOptions } from "./default/props/LanguagesOptions";
 
 export default function LanguagesHandler() {
@@ -12,10 +12,7 @@ export default function LanguagesHandler() {
     const locale = useLocale();
 
     function setLocale(locale: "en" | "pt") {
-        const parts = pathname.split("/");
-        const path = parts.slice(2).join("/") || "";
-
-        router.push(`/${locale}/${path}`);
+        router.replace(pathname, { locale });
     }
 
     return <ConfigProvider theme={{
@@ -53,7 +50,7 @@ export default function LanguagesHandler() {
                 onClick: (info) => setLocale(info.key as "en" | "pt")
             }}
             className="px-2!"
-            overlayStyle={{ zIndex: 99999999 }}
+            overlayStyle={{ zIndex: 1200 }}
         >
             <Button iconPosition="end" icon={<DownOutlined />}>
                 <p className="hidden xl:block mx-1">

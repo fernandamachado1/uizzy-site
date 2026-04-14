@@ -4,8 +4,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import type { TabsProps } from "@/lib/antd";
 import { Button, ConfigProvider, Tabs } from "@/lib/antd";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import LanguagesHandler from "../LanguagesHandler";
 import MobileMenu from "../MobileMenu";
@@ -27,7 +26,7 @@ export default function Header() {
     }
 
     useEffect(() => {
-        const segment = pathname.split("/")[2];
+        const segment = pathname.split("/")[1] || "";
         setSelectedNavItem(segment);
 
     }, [pathname])
@@ -62,7 +61,10 @@ export default function Header() {
                 <Tabs activeKey={selectedMenuItem} items={menuItems as TabsProps['items']}
                 className="hidden! xl:block! xl:mr-4!"
                 tabBarStyle={{ alignItems: "center", justifyContent: "center" }}
-                onChange={(key) => {setSelectedNavItem(key); router.push("/" + key)} }/>
+                onChange={(key) => {
+                    setSelectedNavItem(key);
+                    router.push(key ? `/${key}` : "/");
+                }}/>
 
                 <LanguagesHandler />
                 

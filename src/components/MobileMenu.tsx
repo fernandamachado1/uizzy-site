@@ -1,6 +1,6 @@
 import { Menu } from "@/lib/antd";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import { MenuItem, useNavItems } from "./default/props/NavItemsProps";
 import ThemeButton from "./ThemeButton";
@@ -46,7 +46,10 @@ export default function MobileMenu({ isNavMobileOpen, toggleNavMobile, selectedN
                     selectedKeys={[selectedNavItem ?? ""]}
                     mode="inline"
                     items={menuItems as MenuItem[]}
-                    onSelect={(info) => { toggleNavMobile(); router.push("/" + info.key) }}
+                    onSelect={(info) => {
+                        toggleNavMobile();
+                        router.push(info.key ? `/${info.key}` : "/");
+                    }}
                 />
             )}
 

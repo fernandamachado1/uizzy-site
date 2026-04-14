@@ -5,7 +5,6 @@ import { AimOutlined, EyeOutlined, LinkedinFilled, RubyOutlined } from "@ant-des
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
 
 export async function generateMetadata({ params }: LocaleProps): Promise<Metadata> {
     
@@ -21,28 +20,61 @@ export async function generateMetadata({ params }: LocaleProps): Promise<Metadat
 export default function About() {
 
     const translation = useTranslations("about");
+    const titleParts = translation("aboutTitle").split(" ");
+    const highlightedTitleWord = titleParts.pop() ?? "";
+    const mainTitle = titleParts.join(" ");
 
     return <main className="relative overflow-hidden">
-        <section className="about min-h-[100dvh] pt-[var(--header-height)] px-8 pb-8 dark:text-white dark:bg-neutral-3">
-            <div className="container min-h-[calc(100dvh_-_var(--header-height))] flex flex-col justify-center">
+        <section className="relative min-h-[100dvh] overflow-hidden bg-[#F8F6FC] pt-[var(--header-height)] text-primary-10 dark:bg-[#13131A] dark:text-white">
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-100 dark:hidden"
+                style={{
+                    background:
+                        "radial-gradient(65% 55% at 100% 18%, rgba(133,68,253,.12) 0%, rgba(248,246,252,0) 72%), radial-gradient(56% 42% at 0% 88%, rgba(133,68,253,.08) 0%, rgba(248,246,252,0) 70%), linear-gradient(90deg, #FDFDFF 0%, #F8F6FC 58%)",
+                }}
+            />
+            <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 hidden opacity-90 dark:block"
+                style={{
+                    background:
+                        "radial-gradient(65% 50% at 100% 18%, rgba(133,68,253,.24) 0%, rgba(19,19,26,0) 72%), radial-gradient(54% 38% at 0% 88%, rgba(133,68,253,.16) 0%, rgba(19,19,26,0) 70%), linear-gradient(90deg, #15161D 0%, #13131A 60%)",
+                }}
+            />
+            <div className="container relative min-h-[calc(100dvh_-_var(--header-height))] px-8 py-10 lg:px-16 lg:py-18">
+                <div className="flex h-full flex-col justify-center">
+                    <div className="w-full max-w-[1180px]">
+                        <p className="mb-5 text-sm font-bold tracking-[0.12em] text-primary-6 uppercase dark:text-[#7D4CFF]">
+                            {translation("historyLabel")}
+                        </p>
 
-                <Image src="/logo.svg" width={125} height={200} alt="Logo Uizzy"
-                    className="absolute rotate-45 -right-5 top-15
-                    lg:-right-10 lg:-top-5 lg:w-60 
-                    xl:top-0 xl:w-90" />
+                        <h1 className="mb-9 max-w-[760px] text-[clamp(3rem,7vw,6.2rem)] leading-[0.9] font-bold">
+                            {mainTitle}{" "}
+                            <span className="text-primary-6 dark:text-[#7D4CFF]">{highlightedTitleWord}</span>
+                        </h1>
 
-                <h1 className="text-6xl/[92%] font-semibold max-w-10 mb-8 xl:max-w-150">
-                    {translation("aboutTitle")}
-                </h1>
+                        <p className="mb-10 max-w-[1060px] text-[clamp(1.7rem,2.1vw,3rem)] leading-[1.32] font-light text-primary-10/90 dark:text-white/92">
+                            {translation("aboutDesc1")}
+                        </p>
 
-                <p>{translation("aboutDesc1")}</p>
+                        <div className="grid max-w-[1060px] gap-10 md:grid-cols-2 md:gap-14">
+                            <div>
+                                <div className="mb-4 h-1 w-14 bg-primary-6 dark:bg-[#7D4CFF]" />
+                                <p className="text-[clamp(1.25rem,1.25vw,2rem)] leading-[1.46] font-light text-primary-10/76 dark:text-white/74">
+                                    {translation("aboutDesc2")}
+                                </p>
+                            </div>
 
-                <p>{translation("aboutDesc2")}</p>
-
-                <p>{translation("aboutDesc3")}</p>
-
-                <p>{translation("aboutDesc4")}</p>
-
+                            <div>
+                                <div className="mb-4 h-1 w-14 bg-primary-6 dark:bg-[#7D4CFF]" />
+                                <p className="text-[clamp(1.25rem,1.25vw,2rem)] leading-[1.46] font-light text-primary-10/76 dark:text-white/74">
+                                    {translation("aboutDesc3")}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
