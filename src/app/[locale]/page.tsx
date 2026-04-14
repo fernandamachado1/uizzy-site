@@ -67,8 +67,11 @@ export default function Home() {
           </div>
 
           <div className="flex flex-1 items-end justify-center lg:justify-end">
-            <div className="relative h-full max-h-[calc(100dvh_-_var(--header-height))] w-full max-w-[680px] xl:max-w-[780px]">
-              <div className="absolute right-[-60px] bottom-[-122px] h-[560px] w-[560px] rounded-full bg-primary-6 opacity-90" aria-hidden />
+            <div className="relative h-full max-h-[calc(100dvh_-_var(--header-height))] w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] xl:max-w-[780px]">
+              <div
+                className="absolute right-[-88px] bottom-[-84px] h-[clamp(280px,88vw,560px)] w-[clamp(280px,88vw,560px)] rounded-full bg-primary-6 opacity-90 sm:right-[30px] sm:bottom-[-120px] lg:right-[68px] lg:bottom-[-122px]"
+                aria-hidden
+              />
               <div className="relative z-10 flex h-full items-end justify-center overflow-visible top-[50px]">
                 <Image
                   src="/hero.svg"
@@ -76,7 +79,7 @@ export default function Home() {
                   height={2200}
                   quality={600}
                   sizes="(min-width: 1280px) 780px, (min-width: 1024px) 680px, 92vw"
-                  className="h-auto w-full object-contain"
+                  className="h-auto w-full object-contain sm:w-[94%] lg:w-full"
                   alt="Uizzy Ester"
                   priority
                 />
@@ -99,7 +102,7 @@ export default function Home() {
           </p>
 
           <Link href="about" className="w-max">
-            <ButtonPrimary text={staticTranslation("seeMore")} icon={<RightOutlined />} bgColor="bg-primary-6!" className="py-4! px-3!" />
+            <ButtonPrimary text={staticTranslation("seeMore")} icon={<RightOutlined />} bgColor="!bg-primary-6" className="!py-4 !px-3" />
           </Link>
 
         </div>
@@ -127,7 +130,7 @@ export default function Home() {
             {translation("ourServices")}
           </h2>
 
-          <Radio.Group defaultValue="design" buttonStyle="solid" className="my-6!" size="large" onChange={() => toggleService()}>
+          <Radio.Group defaultValue="design" buttonStyle="solid" className="!my-6" size="large" onChange={() => toggleService()}>
             <Radio.Button value="design">Design UI/UX</Radio.Button>
             <Radio.Button value="development">{translation("development")}</Radio.Button>
           </Radio.Group>
