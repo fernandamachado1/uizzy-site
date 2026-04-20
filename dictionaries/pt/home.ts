@@ -18,4 +18,12 @@ export default {
 
     uizzyTalks: "Uizzy Talks",
     uizzyTalksDesc: "Dicas, tendências e conversas sobre design, tecnologia e inovação — da nossa equipe para você.",
+
+    whereTitle: "Onde estamos",
+    whereDesc: "Nosso escritório fica em Curitiba/PR e também atendemos remotamente. Para visitas presenciais, trabalhamos somente com horário marcado.",
+    whereCity: "Curitiba/PR — Brasil",
+    whereScheduling: "Atendimento remoto e presencial com agendamento",
+    whereCta: "Abrir no Google Maps",
+    whereWhatsAppLabel: "WhatsApp",
+    wherePhoneLabel: "Fixo",
 } as const;

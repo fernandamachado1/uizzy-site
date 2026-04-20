@@ -1,4 +1,4 @@
 
 export type LocaleProps = {
-    params: { locale: "en" | "pt" };
+    params: Promise<{ locale: "en" | "pt" }>;
 }

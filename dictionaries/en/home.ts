@@ -18,4 +18,12 @@ export default {
 
     uizzyTalks: "Uizzy Talks",
     uizzyTalksDesc: "Tips, trends, and conversations about design, technology, and innovation — from our team to you.",
+
+    whereTitle: "Where we are",
+    whereDesc: "We’re based in Curitiba, Brazil, and we also work remotely. For in-person visits, we operate by appointment only.",
+    whereCity: "Curitiba/PR — Brazil",
+    whereScheduling: "Remote and in-person by appointment",
+    whereCta: "Open in Google Maps",
+    whereWhatsAppLabel: "WhatsApp",
+    wherePhoneLabel: "Landline",
 } as const;

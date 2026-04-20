@@ -14,6 +14,12 @@ export async function generateMetadata({ params }: LocaleProps): Promise<Metadat
     return {
         title: metaDataTranslation("aboutTitle"),
         description: metaDataTranslation("aboutDescription"),
+        alternates: {
+            languages: {
+                "pt-BR": "/about",
+                "en": "/en/about",
+            },
+        },
     }
 }
 
