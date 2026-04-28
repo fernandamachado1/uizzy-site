@@ -94,6 +94,11 @@
 body {
   background: var(--neutral-1);
   color: var(--primary-10);
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 form button{

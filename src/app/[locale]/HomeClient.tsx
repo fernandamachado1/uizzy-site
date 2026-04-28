@@ -98,7 +98,7 @@ export default function HomeClient({ messages }: { messages: HomeClientMessages 
                 className="absolute right-[-88px] bottom-[-84px] h-[clamp(280px,88vw,560px)] w-[clamp(280px,88vw,560px)] rounded-full bg-primary-4 opacity-55 sm:right-[30px] sm:bottom-[-120px] xl:right-[68px] xl:bottom-[-122px] dark:bg-primary-6 dark:opacity-90"
                 aria-hidden
               />
-              <div className="relative z-10 flex h-full items-end justify-center overflow-visible xl:top-[50px]">
+              <div className="relative z-10 flex h-full items-end justify-center overflow-hidden xl:top-[50px]">
                 <Image
                   src="/hero.svg"
                   width={1400}
