@@ -3,14 +3,14 @@ import { Button, ConfigProvider } from "@/lib/antd";
 
 export default function ButtonPrimary({ bgColor, text, icon, size, className }: IButtonPrimary) {
     return <ConfigProvider theme={{
-        components: {
-            Button: {
-                defaultHoverBorderColor: "var(--primary-7)",
-                defaultColor: "white",
-                defaultHoverColor: "#4f2c8fff",
-                defaultBorderColor: "none",
-                defaultActiveColor: "var(--primary-9)",
-                defaultActiveBorderColor: "var(--primary-9)"
+            components: {
+                Button: {
+                    defaultHoverBorderColor: "var(--primary-7)",
+                    defaultColor: "white",
+                    defaultHoverColor: "var(--primary-6)",
+                    defaultBorderColor: "none",
+                    defaultActiveColor: "var(--primary-9)",
+                    defaultActiveBorderColor: "var(--primary-9)"
             }
         }
     }}>

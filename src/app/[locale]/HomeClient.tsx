@@ -4,7 +4,6 @@ import Ball from "@/components/Ball";
 import ButtonPrimary from "@/components/ButtonPrimary";
 // import Carousel from "@/components/carousel/Carousel";
 import { ClockCircleOutlined, EnvironmentOutlined, PhoneOutlined, RightOutlined, WhatsAppOutlined } from "@ant-design/icons";
-import { Radio } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -16,12 +15,18 @@ export type HomeClientMessages = {
   home: {
     hero: string;
     heroDesc: string;
+    heroCtaPrimary: string;
+    heroCtaSecondary: string;
     meetUizzy: string;
     meetUizzyDesc: string;
+    meetUizzyTag: string;
     ourServices: string;
+    ourServicesTag: string;
+    ourServicesDesc: string;
     designDesc: string;
     development: string;
     developmentDesc: string;
+    whereTag: string;
     whereTitle: string;
     whereDesc: string;
     whereCity: string;
@@ -39,6 +44,7 @@ const phoneUrl = "tel:+554130839600";
 
 export default function HomeClient({ messages }: { messages: HomeClientMessages }) {
   const t = messages.home;
+  const sectionEyebrowClass = "mb-4 text-sm font-semibold uppercase tracking-[0.24em]";
 
   const serviceCopy = useMemo(
     () => ({
@@ -50,29 +56,46 @@ export default function HomeClient({ messages }: { messages: HomeClientMessages 
 
   const [service, setService] = useState<{ title: string; description: string }>(serviceCopy.design);
 
-  function toggleService() {
-    if (service.title === "Design UI/UX") {
-      setService(serviceCopy.development);
-      return true;
-    }
-
-    setService(serviceCopy.design);
-    return true;
-  }
-
   return (
     <main>
-      <section className="relative bg-primary-5 text-white min-h-[100dvh] overflow-hidden pt-[var(--header-height)]">
-        <div className="container mx-auto grid min-h-[calc(100dvh_-_var(--header-height))] grid-rows-[auto_1fr] gap-10 px-6 pt-10 pb-0 sm:px-8 lg:px-16 xl:flex xl:flex-row xl:items-stretch xl:py-10">
-          <div className="flex flex-col justify-center xl:flex-1 xl:max-w-[520px]">
-            <h1 className="font-[700] text-[clamp(2.5rem,8vw,4.5rem)] leading-[1] tracking-[-2px]">{t.hero}</h1>
-            <p className="mt-6 max-w-[460px] text-[clamp(1.25rem,4vw,2rem)] font-[400] leading-[1.2] text-white/90">{t.heroDesc}</p>
+      <section className="relative bg-primary-2 text-primary-6 min-h-[100dvh] overflow-hidden dark:bg-primary-5 dark:text-white">
+        <div className="container mx-auto relative flex min-h-[100dvh] flex-col gap-8 px-6 pb-0 pt-4 sm:px-8 sm:pt-6 lg:px-16 xl:flex-row xl:items-stretch xl:gap-14 xl:py-10">
+          <div className="relative z-10 flex flex-col justify-start pt-6 sm:pt-8 xl:flex-1 xl:max-w-[560px] xl:justify-center xl:pt-0">
+            <p className={`${sectionEyebrowClass} text-primary-6/70 dark:text-white/70`}>Uizzy Tecnologia</p>
+            <h1 className="max-w-[10.5ch] font-[700] text-[clamp(1.95rem,9.5vw,3.9rem)] leading-[0.98] tracking-[-0.05em] sm:max-w-none sm:text-[clamp(2.25rem,6.5vw,3.9rem)]">
+              {t.hero}
+            </h1>
+            <p className="mt-5 max-w-[480px] text-[clamp(0.98rem,3.7vw,1.55rem)] font-[400] leading-[1.4] text-primary-6/90 dark:text-white/90 sm:mt-6 sm:text-[clamp(1.05rem,2.7vw,1.55rem)]">
+              {t.heroDesc}
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="w-max">
+                <ButtonPrimary
+                  text={t.heroCtaPrimary}
+                  size="large"
+                  icon={<WhatsAppOutlined />}
+                  bgColor="!bg-primary-6"
+                />
+              </Link>
+
+              <Link href="#services" className="w-max">
+                <ButtonPrimary
+                  text={t.heroCtaSecondary}
+                  size="large"
+                  icon={<RightOutlined />}
+                  bgColor="!bg-transparent"
+                  className="!border !border-primary-6/20 !bg-primary-1/70 !text-primary-6 hover:!border-primary-6/35 hover:!bg-primary-1/90 dark:!border-primary-1/30 dark:!bg-primary-1/10 dark:!text-white dark:hover:!border-primary-1/50 dark:hover:!bg-primary-1/15"
+                />
+              </Link>
+            </div>
+
           </div>
 
-          <div className="self-end h-full flex justify-center xl:h-auto xl:flex-1 xl:items-end xl:justify-end">
-            <div className="relative h-full max-h-[calc(100dvh_-_var(--header-height))] w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] xl:max-w-[780px]">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center px-6 sm:px-8 xl:static xl:flex-1 xl:items-end xl:justify-end xl:px-0">
+            <div className="relative h-full w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] xl:max-w-[780px]">
               <div
-                className="absolute right-[-88px] bottom-[-84px] h-[clamp(280px,88vw,560px)] w-[clamp(280px,88vw,560px)] rounded-full bg-primary-6 opacity-90 sm:right-[30px] sm:bottom-[-120px] xl:right-[68px] xl:bottom-[-122px]"
+                className="absolute right-[-88px] bottom-[-84px] h-[clamp(280px,88vw,560px)] w-[clamp(280px,88vw,560px)] rounded-full bg-primary-4 opacity-55 sm:right-[30px] sm:bottom-[-120px] xl:right-[68px] xl:bottom-[-122px] dark:bg-primary-6 dark:opacity-90"
                 aria-hidden
               />
               <div className="relative z-10 flex h-full items-end justify-center overflow-visible xl:top-[50px]">
@@ -92,58 +115,112 @@ export default function HomeClient({ messages }: { messages: HomeClientMessages 
         </div>
       </section>
 
-      <section className="bg-white dark:bg-black text-primary-10 relative z-1 overflow-hidden min-h-[100dvh] pt-[var(--header-height)]">
-        <div className="container flex flex-col py-24 px-8 lg:py-32 lg:px-16 xl:py-48 justify-center min-h-[calc(100dvh_-_var(--header-height))]">
-          <h2 className="text-6xl/[92%] font-semibold max-w-10 lg:text-6xl lg:max-w-none">{t.meetUizzy}</h2>
+      <section id="about" className="bg-primary-1 dark:bg-black text-primary-10 relative z-1 overflow-hidden min-h-[100dvh] pt-[var(--header-height)] scroll-mt-[var(--header-height)]">
+        <div className="container flex min-h-[calc(100dvh_-_var(--header-height))] items-center px-8 py-24 lg:px-16 lg:py-32 xl:py-40">
+          <div className="relative w-full max-w-4xl">
+            <div className="absolute left-[-8%] top-[-8%] h-44 w-44 rounded-full bg-primary-2/70 blur-3xl dark:bg-primary-3/20" aria-hidden />
 
-          <p className="max-w-[80%] font-light my-6 text-xl lg:text-xl lg:max-w-[70%]">{t.meetUizzyDesc}</p>
+            <div className="relative">
+              <p className={`${sectionEyebrowClass} text-primary-6 dark:text-primary-9`}>{t.meetUizzyTag}</p>
 
-          <Link href="about" className="w-max">
-            <ButtonPrimary
-              text={messages._static.seeMore}
-              icon={<RightOutlined />}
-              bgColor="!bg-primary-6"
-              className="!py-4 !px-3"
-            />
-          </Link>
+              <h2 className="mt-6 max-w-4xl text-[clamp(3rem,7.5vw,4.8rem)] font-semibold leading-[0.96] tracking-[-0.05em] text-primary-10 dark:text-white">
+                <span>{t.meetUizzy.split(" ").slice(0, -1).join(" ")}</span>{" "}
+                <span className="bg-gradient-to-r from-primary-5 via-primary-4 to-primary-6 bg-clip-text text-transparent">
+                  {t.meetUizzy.split(" ").slice(-1).join(" ")}
+                </span>
+              </h2>
+
+              <p className="mt-10 max-w-3xl text-[clamp(1.15rem,2.2vw,1.65rem)] leading-[1.6] text-primary-9/90 dark:text-primary-10/86">
+                {t.meetUizzyDesc}
+              </p>
+
+              <div className="mt-10">
+                <Link href="about" className="w-max">
+                  <ButtonPrimary
+                    text={messages._static.seeMore}
+                    size="large"
+                    icon={<RightOutlined />}
+                    bgColor="!bg-primary-6"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         <Ball
           size="size-70 lg:size-90 xl:size-130"
-          bg="bg-primary-3 dark:bg-[#30195c] opacity-40"
+          bg="bg-primary-3 dark:bg-primary-3 opacity-40"
           position="top-[15%] left-[85%] sm:left-[78%] md:left-[71%] lg:left-[80%] xl:left-[78%]"
         />
 
-        <Ball size="size-70 lg:size-120 xl:size-170" bg="bg-primary-3 dark:bg-[#30195c]" position="top-[50%] left-[50%]" />
+        <Ball size="size-70 lg:size-120 xl:size-170" bg="bg-primary-3 dark:bg-primary-3" position="top-[50%] left-[50%]" />
 
         <Ball
           size="size-70 lg:size-90 xl:size-130"
-          bg="bg-primary-3 dark:bg-[#30195c] opacity-40"
+          bg="bg-primary-3 dark:bg-primary-3 opacity-40"
           position="top-[85%] left-[15%] sm:left-[22%] md:left-[29%] lg:left-[20%] xl:left-[22%]"
         />
       </section>
 
-      <section className="bg-[#1E0B63] text-white min-h-[100dvh] pt-[var(--header-height)]">
-        <div className="container py-12 px-8 lg:py-16 lg:px-16 flex flex-col min-h-[calc(100dvh_-_var(--header-height))]">
-          <h2 className="text-6xl/[92%] font-semibold max-w-10 lg:text-6xl lg:max-w-none">{t.ourServices}</h2>
+      <section id="services" className="bg-primary-2 text-primary-6 min-h-[100dvh] pt-[var(--header-height)] scroll-mt-[var(--header-height)] dark:bg-primary-5 dark:text-white">
+        <div className="container flex min-h-[calc(100dvh_-_var(--header-height))] flex-col px-8 py-12 lg:px-16 lg:py-16">
+          <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+            <p className={`${sectionEyebrowClass} text-primary-6/70 dark:text-white/70`}>{t.ourServicesTag}</p>
 
-          <Radio.Group defaultValue="design" buttonStyle="solid" className="!my-6" size="large" onChange={() => toggleService()}>
-            <Radio.Button value="design">Design UI/UX</Radio.Button>
-            <Radio.Button value="development">{t.development}</Radio.Button>
-          </Radio.Group>
+            <h2 className="mt-6 text-center text-[clamp(2.85rem,7.5vw,4.8rem)] font-semibold leading-[0.94] tracking-[-0.04em] text-primary-6 dark:text-white">
+              <span>{t.ourServices.split(" ")[0]}</span>{" "}
+              <span className="text-primary-5 dark:text-primary-2">
+                {t.ourServices.split(" ").slice(1).join(" ")}
+              </span>
+            </h2>
 
-          <p className="text-2xl font-semibold lg:text-4xl">{service.title}</p>
-          <div className="h-1 w-20 bg-primary-6 mb-6 mt-1 lg:mt-2 lg:w-50"></div>
+            <p className="mt-6 max-w-3xl text-lg leading-[1.6] text-primary-6/85 sm:text-xl dark:text-white/88">
+              {t.ourServicesDesc}
+            </p>
 
-          <p className="text-lg max-w-[75%] lg:text-xl lg:max-w-[85%] font-light" dangerouslySetInnerHTML={{ __html: service.description }} />
+            <div className="!mt-8 !mb-10 inline-flex rounded-full bg-primary-6 p-1 shadow-sm dark:bg-primary-8">
+              <button
+                type="button"
+                onClick={() => setService(serviceCopy.design)}
+                className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
+                  service.title === "Design UI/UX"
+                    ? "bg-primary-8 text-white shadow-sm dark:bg-primary-6"
+                    : "bg-transparent text-primary-1/72 hover:text-white dark:text-white/72 dark:hover:text-white"
+                }`}
+              >
+                Design UI/UX
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setService(serviceCopy.development)}
+                className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${
+                  service.title === t.development
+                    ? "bg-primary-8 text-white shadow-sm dark:bg-primary-6"
+                    : "bg-transparent text-primary-1/72 hover:text-white dark:text-white/72 dark:hover:text-white"
+                }`}
+              >
+                {t.development}
+              </button>
+            </div>
+          </div>
+
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="text-[clamp(1.5rem,2.5vw,2.4rem)] font-semibold text-primary-6 dark:text-white">{service.title}</p>
+            <div className="mb-6 mt-1 h-1 w-20 bg-primary-4 lg:mt-2 lg:w-50 dark:bg-primary-2"></div>
+
+            <p className="max-w-[75%] text-lg font-light text-primary-6/90 lg:max-w-[85%] lg:text-xl dark:text-white/88" dangerouslySetInnerHTML={{ __html: service.description }} />
+          </div>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-black text-primary-10 dark:text-[#F3E8FF] relative overflow-hidden border-t border-primary-3/40 dark:border-primary-3/20">
+      <section id="contact" className="bg-primary-2 dark:bg-black text-primary-10 dark:text-primary-10 relative overflow-hidden border-t border-primary-3/40 dark:border-primary-3/20 scroll-mt-[var(--header-height)]">
         <div className="container px-8 py-16 lg:px-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">
-              <h2 className="text-5xl/[100%] font-semibold lg:text-6xl/[92%]">{t.whereTitle}</h2>
+              <p className={`${sectionEyebrowClass} text-primary-6 dark:text-primary-9`}>{t.whereTag}</p>
+              <h2 className="text-[clamp(2.5rem,5vw,4rem)]/[1] font-semibold">{t.whereTitle}</h2>
 
               {/* <p className="mt-5 text-lg font-light text-primary-10/80 dark:text-[#F3E8FF]/85 lg:text-xl">{t.whereDesc}</p> */}
 
@@ -188,12 +265,12 @@ export default function HomeClient({ messages }: { messages: HomeClientMessages 
               </div>
 
               <Link href={mapsQueryUrl} target="_blank" rel="noreferrer" className="mt-8 inline-block w-max">
-                <ButtonPrimary text={t.whereCta} icon={<RightOutlined />} bgColor="!bg-primary-6" className="!py-4 !px-3" />
+                <ButtonPrimary text={t.whereCta} size="large" icon={<RightOutlined />} bgColor="!bg-primary-6" />
               </Link>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="overflow-hidden rounded-2xl border border-primary-3/50 bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12)] dark:border-primary-3/20 dark:bg-black">
+              <div className="overflow-hidden rounded-2xl border border-primary-3/50 bg-primary-1 shadow-[0_24px_80px_rgba(0,0,0,0.12)] dark:border-primary-3/20 dark:bg-black">
                 <iframe
                   src={mapsEmbedUrl}
                   width="100%"

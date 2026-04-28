@@ -20,7 +20,7 @@ export default function CollaboratorCard({ image, name, description, links }: IC
 
             <div className="mt-2">
                 {links.map((link: { url: string, icon: any }) => {
-                    return <Link href={link.url} key={crypto.randomUUID()} target="_blank" title={`${name} Social Media`} className="text-primary-7 text-3xl xl:text-2xl">
+                    return <Link href={link.url} key={crypto.randomUUID()} target="_blank" title={`${name} Social Media`} className="text-primary-5 text-3xl xl:text-2xl dark:text-primary-2">
                         {link.icon}
                     </Link>
                 })}
@@ -28,10 +28,10 @@ export default function CollaboratorCard({ image, name, description, links }: IC
         </div>
 
         <div className="w-75 text-left px-4">
-            <h2 className="font-semibold text-2xl text-primary-7">{name}</h2>
-            <div className="bg-primary-6 h-[3px] w-40 mt-1 mb-3"></div>
+            <h2 className="font-semibold text-2xl text-primary-6 dark:text-white">{name}</h2>
+            <div className="bg-primary-4 h-[3px] w-40 mt-1 mb-3 dark:bg-primary-2"></div>
 
-            <p className="font-light text-md">{description}</p>
+            <p className="font-light text-md text-primary-6/80 dark:text-white/78">{description}</p>
         </div>
 
     </div>

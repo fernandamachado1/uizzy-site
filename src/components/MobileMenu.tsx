@@ -30,14 +30,14 @@ export default function MobileMenu({ isNavMobileOpen, toggleNavMobile, selectedN
         </div>
 
         <div className={`nav-mobile z-999999999
-            w-1.5/2 h-screen bg-white dark:bg-black
+            w-1.5/2 h-screen bg-primary-1 dark:bg-black
             fixed -left-full top-0
             flex flex-col items-start px-4 py-12 gap-y-8
             transition-[left] duration-500 ease-in-out
             ${isNavMobileOpen && "left-0"}`} onClick={(e) => e.stopPropagation()}>
             <div className="flex mx-auto items-center justify-center gap-2">
                 <Image src="/logo.svg" width={64} height={64} alt="Logo Uizzy" />
-                <h1 className="text-5xl font-bold text-[#211742] dark:text-white">uizzy</h1>
+                <h1 className="text-5xl font-bold text-primary-6 dark:text-white">uizzy</h1>
             </div>
 
             {isMounted && (

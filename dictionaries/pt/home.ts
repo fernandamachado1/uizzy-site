@@ -3,12 +3,14 @@ export default {
     heroDesc: "Do conceito ao código, criamos software que fazem a diferença na vida cotidiana",
     heroCtaPrimary: "Falar no WhatsApp",
     heroCtaSecondary: "Ver serviços",
-    heroSupport: "Atendimento direto com nosso time para tirar dúvidas e entender o melhor caminho para o seu projeto.",
 
     meetUizzy: "Conheça a Uizzy",
     meetUizzyDesc: "Somos uma empresa de tecnologia que acredita no poder da simplicidade. Construímos soluções digitais inteligentes para tornar o dia a dia mais rápido, humano e verdadeiramente conectado.",
+    meetUizzyTag: "Sobre nós",
 
     ourServices: "Nossos Serviços",
+    ourServicesTag: "Especialidades que Transformam",
+    ourServicesDesc: "Combinamos design centrado no usuário com engenharia de ponta para criar produtos que não apenas funcionam, mas encantam.",
     designDesc: `Na Uizzy, design é mais do que estética. É estratégia.
         <br/>
         <br/>
@@ -22,6 +24,7 @@ export default {
     uizzyTalks: "Uizzy Talks",
     uizzyTalksDesc: "Dicas, tendências e conversas sobre design, tecnologia e inovação — da nossa equipe para você.",
 
+    whereTag: "Contato",
     whereTitle: "Onde estamos",
     whereDesc: "Nosso escritório fica em Curitiba/PR e também atendemos remotamente. Para visitas presenciais, trabalhamos somente com horário marcado.",
     whereCity: "Curitiba/PR — Brasil",

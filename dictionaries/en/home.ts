@@ -3,12 +3,14 @@ export default {
     heroDesc: "From concept to code, we build software that makes a difference in everyday life.",
     heroCtaPrimary: "Talk on WhatsApp",
     heroCtaSecondary: "See services",
-    heroSupport: "Talk directly with our team to ask questions and find the best path for your project.",
 
     meetUizzy: "Meet Uizzy",
     meetUizzyDesc: "We’re a tech company that believes in the power of simplicity. We build smart digital solutions to make daily life faster, more human, and truly connected.",
+    meetUizzyTag: "About us",
 
     ourServices: "Our Services",
+    ourServicesTag: "Specialties That Transform",
+    ourServicesDesc: "We combine user-centered design with advanced engineering to create products that do more than work, they resonate.",
     designDesc: `At Uizzy, design is more than aesthetics. It is strategy.
         <br/>
         <br/>
@@ -22,6 +24,7 @@ export default {
     uizzyTalks: "Uizzy Talks",
     uizzyTalksDesc: "Tips, trends, and conversations about design, technology, and innovation — from our team to you.",
 
+    whereTag: "Contact",
     whereTitle: "Where we are",
     whereDesc: "We’re based in Curitiba, Brazil, and we also work remotely. For in-person visits, we operate by appointment only.",
     whereCity: "Curitiba/PR — Brazil",

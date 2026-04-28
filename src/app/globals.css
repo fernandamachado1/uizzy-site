@@ -29,34 +29,34 @@
 :root {
   --header-height: 96px;
 
-  --primary-1: #F8F0FF;
-  --primary-2: #F3E8FF;
-  --primary-3: #DCBFFF;
-  --primary-4: #C296FF;
-  --primary-5: #A56EFF;
-  --primary-6: #8544FD;
-  --primary-7: #642FD6;
-  --primary-8: #471EB0;
-  --primary-9: #2F118A;
-  --primary-10: #1E0B63;
+  --primary-1: #FFFFFF;
+  --primary-2: #D9C7FF;
+  --primary-3: #B79FFF;
+  --primary-4: #A576FF;
+  --primary-5: #4B3F8E;
+  --primary-6: #211742;
+  --primary-7: #160B30;
+  --primary-8: #0F081F;
+  --primary-9: #09050F;
+  --primary-10: #05020B;
 
-  --neutral-1: white;
-  --neutral-3: #F5F5F5;
-  --neutral-5: #ccc;
+  --neutral-1: #FFFFFF;
+  --neutral-3: #F7F2FF;
+  --neutral-5: #DDD2F1;
 }
 
 .dark {
   --header-height: 96px;
 
   --primary-1: #1C162B;
-  --primary-2: #281B45;
-  --primary-3: #36225A;
-  --primary-4: #472A7D;
+  --primary-2: #211742;
+  --primary-3: #30205A;
+  --primary-4: #4B3F8E;
   --primary-5: #5D33AC;
-  --primary-6: #743DDA;
-  --primary-7: #9765E8;
-  --primary-8: #B990F3;
-  --primary-9: #D6BAF8;
+  --primary-6: #7A46E8;
+  --primary-7: #A576FF;
+  --primary-8: #B79FFF;
+  --primary-9: #D9C7FF;
   --primary-10: #EFE4FA;
 
   --neutral-1: #000000;
@@ -91,8 +91,13 @@
   font-family: "DM Sans", Arial;
 }
 
+body {
+  background: var(--neutral-1);
+  color: var(--primary-10);
+}
+
 form button{
-  border: 1px solid #d9d9d9 !important;
+  border: 1px solid var(--primary-3) !important;
 }
 
 div.post-container .post-content img{

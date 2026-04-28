@@ -31,11 +31,11 @@ export default function PostTemplate(PostInfo: Post) {
             <h2 className="text-3xl">
                 {translate("title", PostInfo.title)}
             </h2>
-            <p className="text-[#BFBFBF] text-sm my-1">
+            <p className="text-primary-5 text-sm my-1">
                 {PostInfo.date.toLocaleDateString()}
             </p>
 
-            <div className="flex items-center rounded-full p-2 gap-2 bg-[#211743] dark:bg-[#5D33AB] w-fit">
+            <div className="flex items-center rounded-full p-2 gap-2 bg-primary-6 dark:bg-primary-5 w-fit">
                 <div>
                     <Image src={PostInfo.author.photo} width={40} height={40} alt={`${PostInfo.author.name} Uizzy Talks`}
                         className="rounded-full"
@@ -44,7 +44,7 @@ export default function PostTemplate(PostInfo: Post) {
 
                 <div className="flex flex-col justify-center pr-2">
                     <h3 className="text-lg text-white font-bold -mb-1">{PostInfo.author.name}</h3>
-                    <p className="font-light text-sm text-[#A576FF] dark:text-[#D9C5FF]">
+                    <p className="font-light text-sm text-primary-4 dark:text-primary-9">
                         {translate("author.role", PostInfo.author.role)}
                     </p>
                 </div>
@@ -64,7 +64,7 @@ export default function PostTemplate(PostInfo: Post) {
                 </div>
 
                 <div className="flex flex-col justify-center">
-                    <h3 className="text-xl font-bold text-[#211743] dark:text-[#743DDA]">{PostInfo.author.name}</h3>
+                    <h3 className="text-xl font-bold text-primary-6 dark:text-primary-7">{PostInfo.author.name}</h3>
                     <p className="text-sm font-light truncate">
                         {PostInfo.author.about ?
                             translate("author.about", PostInfo.author.about)

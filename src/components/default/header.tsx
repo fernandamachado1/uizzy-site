@@ -35,7 +35,7 @@ export default function Header() {
 
         <MobileMenu isNavMobileOpen={isNavMobileOpen} toggleNavMobile={toggleNavMobile} selectedNavItem={selectedMenuItem} />
 
-        <header className="px-4 xl:px-8 py-2 fixed top-0 w-full bg-white z-9999999 dark:bg-black flex items-center justify-between gap-x-3">
+        <header className="px-4 xl:px-8 py-2 fixed top-0 w-full bg-primary-1/90 backdrop-blur-md z-9999999 dark:bg-black flex items-center justify-between gap-x-3">
             <div className="flex gap-x-3 items-center">
                 <ConfigProvider theme={{
                     components: {
@@ -53,7 +53,7 @@ export default function Header() {
 
                 <Link href="/" title="Home Uizzy" className="flex items-center gap-x-2">
                     <Image src="/logo.svg" width={30} height={24} alt="Logo Uizzy" />
-                    <h1 className="hidden xl:block font-bold text-3xl text-[#211742] dark:text-white">uizzy</h1>
+                    <h1 className="hidden xl:block font-bold text-3xl text-primary-6 dark:text-white">uizzy</h1>
                 </Link>
             </div>
 

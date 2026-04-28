@@ -77,30 +77,30 @@ export default function AppProvider({ children }: { children: React.ReactNode })
                     },
                     components: {
                         Radio: {
-                            buttonSolidCheckedBg: "var(--primary-6)",
+                            buttonSolidCheckedBg: "var(--primary-5)",
                             buttonSolidCheckedActiveBg: "var(--primary-6)",
-                            buttonSolidCheckedHoverBg: "var(--primary-6)",
+                            buttonSolidCheckedHoverBg: "var(--primary-5)",
                             buttonBg: "white",
                             buttonColor: "black",
-                            colorPrimary: "var(--primary-6)"
+                            colorPrimary: "var(--primary-5)"
                         },
                         Menu: {
-                            itemSelectedBg: "#8544fd90",
-                            itemSelectedColor: "var(--primary-10)",
-                            itemHoverBg: "#8544fd6d",
+                            itemSelectedBg: "#D9C7FF90",
+                            itemSelectedColor: "var(--primary-7)",
+                            itemHoverBg: "#D9C7FF6d",
                         },
                         Tabs: {
-                            inkBarColor: "var(--primary-5)",
-                            itemSelectedColor: "var(--primary-7)",
-                            itemHoverColor: "var(--primary-7)",
+                            inkBarColor: "var(--primary-4)",
+                            itemSelectedColor: "var(--primary-6)",
+                            itemHoverColor: "var(--primary-6)",
                             horizontalItemPadding: "4px",
                             horizontalMargin: "0",
                         },
                         Switch: {
-                            colorPrimary: "var(--primary-6)",
-                            colorPrimaryBorder: "var(--primary-7)",
-                            colorPrimaryBorderHover: "var(--primary-8)",
-                            colorPrimaryHover: "var(--primary-7)"
+                            colorPrimary: "var(--primary-5)",
+                            colorPrimaryBorder: "var(--primary-6)",
+                            colorPrimaryBorderHover: "var(--primary-7)",
+                            colorPrimaryHover: "var(--primary-6)"
                         },
                     }
                 }}>

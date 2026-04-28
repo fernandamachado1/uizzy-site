@@ -27,9 +27,9 @@ export default function LanguagesHandler() {
                 defaultShadow: "none"
             },
             Dropdown: {
-                controlItemBgActive: "#8544fd90",
-                controlItemBgActiveHover: "#8544fd6d",
-                controlItemBgHover: "#8544fd6d",
+                controlItemBgActive: "#A576FF90",
+                controlItemBgActiveHover: "#A576FF6d",
+                controlItemBgHover: "#A576FF6d",
                 colorPrimary: "var(--primary-10)",
             }
         }

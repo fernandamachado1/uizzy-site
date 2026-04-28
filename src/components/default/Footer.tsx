@@ -13,7 +13,7 @@ export default function Footer() {
         flex flex-col items-center justify-center
         border-t border-primary-3/40 dark:border-primary-3/30
         bg-primary-2 dark:bg-primary-1
-        text-primary-10 dark:text-[#F3E8FF]
+        text-primary-10 dark:text-primary-10
         p-4 gap-y-2"
     >
         <div className="flex items-center justify-center gap-x-2 text-2xl">
