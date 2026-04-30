@@ -3,17 +3,22 @@ interface IEssenceCardProperties {
     title: string
     description: string
     className?: string
-    biggerText?: boolean
 }
 
-export default function EssenceCard({ icon, title, description, className, biggerText }: IEssenceCardProperties) {
-    
-    return <div className={`flex flex-col items-center justify-center p-8 gap-y-2 text-center
-    xl:w-[33%] xl:py-32 xl:bg-primary-2 xl:text-primary-6 xl:border xl:border-primary-3/60 dark:xl:bg-primary-3 dark:xl:text-white dark:xl:border dark:xl:border-primary-4/20 ${className}`}>
-        <div className={`text-6xl ${biggerText ? "text-7xl" : ""}`}>{icon}</div>
+export default function EssenceCard({ icon, title, description, className }: IEssenceCardProperties) {
+    return <article className={`group border-t border-primary-3/55 py-8 md:py-10 xl:border-t-0 xl:border-l xl:px-8 xl:py-0 first:xl:border-l-0 dark:border-primary-3/25 ${className}`}>
+        <div className="mb-6 flex items-center gap-4">
+            <span className="flex size-14 items-center justify-center border border-primary-4/50 text-3xl text-primary-6 dark:border-primary-8/35 dark:text-primary-9">
+                {icon}
+            </span>
 
-        <h2 className={`text-3xl/[92%] font-bold mb-2 ${biggerText ? "text-4xl/[92%]" : ""}`}>{title}</h2>
-    
-        <p className={`font-light text-lg/[100%] ${biggerText ? "text-xl/[100%]" : ""}`}>{description}</p>
-    </div>
+            <h3 className="text-[clamp(1.65rem,2vw,2.25rem)]/[0.96] font-semibold text-primary-6 dark:text-white">
+                {title}
+            </h3>
+        </div>
+
+        <p className="max-w-xl text-base leading-[1.7] font-light text-primary-6/82 md:text-lg dark:text-white/78">
+            {description}
+        </p>
+    </article>
 }

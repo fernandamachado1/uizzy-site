@@ -13,26 +13,28 @@ interface ICollaboratorCardProperties {
 
 export default function CollaboratorCard({ image, name, description, links }: ICollaboratorCardProperties) {
 
-    return <div className="w-full md:w-full lg:w-[50%] xl:w-[33%] flex justify-center">
+    return <article className="grid w-full grid-cols-[80px_1fr] items-center gap-5 border-t border-primary-3/45 py-7 text-left sm:grid-cols-[96px_1fr] dark:border-primary-3/25">
 
-        <div className="image w-25 text-left">
-            <Image src={image} width={100} height={100} alt="Uizzy Collaborator" />
+        <div>
+            <div className="flex size-20 items-center justify-center overflow-hidden bg-primary-2/45 sm:size-24 dark:bg-primary-3/30">
+                <Image src={image} width={96} height={96} alt={`Uizzy Collaborator ${name}`} className="max-h-full w-full object-contain p-2" style={{ height: "auto" }} />
+            </div>
 
-            <div className="mt-2">
+            <div className="mt-3 flex gap-3">
                 {links.map((link: { url: string, icon: any }) => {
-                    return <Link href={link.url} key={crypto.randomUUID()} target="_blank" title={`${name} Social Media`} className="text-primary-5 text-3xl xl:text-2xl dark:text-primary-2">
+                    return <Link href={link.url} key={`${name}-${link.url}`} target="_blank" title={`${name} Social Media`} className="text-2xl text-primary-5 transition-colors hover:text-primary-6 dark:text-primary-9 dark:hover:text-white">
                         {link.icon}
                     </Link>
                 })}
             </div>
         </div>
 
-        <div className="w-75 text-left px-4">
-            <h2 className="font-semibold text-2xl text-primary-6 dark:text-white">{name}</h2>
-            <div className="bg-primary-4 h-[3px] w-40 mt-1 mb-3 dark:bg-primary-2"></div>
+        <div>
+            <h3 className="text-[clamp(1.35rem,2vw,1.8rem)]/[1.05] font-semibold text-primary-6 dark:text-white">{name}</h3>
+            <div className="mt-3 mb-4 h-[3px] w-28 bg-primary-4 dark:bg-primary-8"></div>
 
-            <p className="font-light text-md text-primary-6/80 dark:text-white/78">{description}</p>
+            <p className="text-base leading-[1.45] font-light text-primary-6/76 dark:text-white/72">{description}</p>
         </div>
 
-    </div>
+    </article>
 }

@@ -16,5 +16,6 @@ export default {
     valuesTitle: "Valores",
     valuesDesc: "Respeito, transparência, inovação, Personalização, dedicação, comunicação",
 
+    essenceTitle: "Missão, visão e valores",
     ourTeam: "Nosso Time"
 } as const;

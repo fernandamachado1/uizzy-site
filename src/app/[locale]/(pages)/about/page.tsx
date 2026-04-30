@@ -29,6 +29,11 @@ export default function About() {
     const titleParts = translation("aboutTitle").split(" ");
     const highlightedTitleWord = titleParts.pop() ?? "";
     const mainTitle = titleParts.join(" ");
+    const narrativeItems = [
+        translation("aboutDesc2"),
+        translation("aboutDesc3"),
+        translation("aboutDesc4"),
+    ];
 
     return <main className="relative overflow-hidden">
         <section className="relative min-h-[100dvh] overflow-hidden bg-primary-1 text-primary-10 dark:bg-primary-7 dark:text-white">
@@ -37,7 +42,7 @@ export default function About() {
                 className="pointer-events-none absolute inset-0 opacity-100 dark:hidden"
                 style={{
                     background:
-                        "radial-gradient(65% 55% at 100% 18%, rgba(165,118,255,.12) 0%, rgba(255,255,255,0) 72%), radial-gradient(56% 42% at 0% 88%, rgba(165,118,255,.08) 0%, rgba(255,255,255,0) 70%), linear-gradient(90deg, #FFFFFF 0%, #F7F2FF 58%)",
+                        "linear-gradient(90deg, #FFFFFF 0%, #F7F2FF 58%)",
                 }}
             />
             <div
@@ -45,94 +50,87 @@ export default function About() {
                 className="pointer-events-none absolute inset-0 hidden opacity-90 dark:block"
                 style={{
                     background:
-                        "radial-gradient(65% 50% at 100% 18%, rgba(165,118,255,.24) 0%, rgba(19,19,26,0) 72%), radial-gradient(54% 38% at 0% 88%, rgba(165,118,255,.16) 0%, rgba(19,19,26,0) 70%), linear-gradient(90deg, #15161D 0%, #13131A 60%)",
+                        "linear-gradient(90deg, #15161D 0%, #13131A 60%)",
                 }}
             />
-            <div className="container relative min-h-[100dvh] px-8 py-10 lg:px-16 lg:py-18">
-                <div className="flex h-full flex-col justify-center">
-                    <div className="w-full max-w-[1180px]">
-                        <p className="mb-5 text-sm font-bold tracking-[0.12em] text-primary-6 uppercase dark:text-primary-4">
+            <div className="container relative flex min-h-[100dvh] items-center px-8 py-24 lg:px-16 lg:py-32">
+                <div className="grid w-full gap-12 xl:grid-cols-[minmax(0,0.9fr)_minmax(420px,0.72fr)] xl:items-end xl:gap-20">
+                    <div>
+                        <p className="mb-5 text-sm font-semibold tracking-[0.24em] text-primary-6 uppercase dark:text-primary-9">
                             {translation("historyLabel")}
                         </p>
 
-                        <h1 className="mb-9 max-w-[760px] text-[clamp(2.7rem,6vw,5rem)] leading-[0.94] font-bold">
+                        <h1 className="max-w-[760px] text-[clamp(3rem,7.5vw,5.4rem)] leading-[0.94] font-semibold">
                             {mainTitle}{" "}
-                            <span className="text-primary-6 dark:text-primary-4">{highlightedTitleWord}</span>
+                            <span className="text-primary-5 dark:text-primary-9">{highlightedTitleWord}</span>
                         </h1>
 
-                        <p className="mb-10 max-w-[1060px] text-[clamp(1.2rem,1.8vw,2.05rem)] leading-[1.48] font-light text-primary-10/90 dark:text-white/92">
+                        <p className="mt-9 max-w-[820px] text-[clamp(1.18rem,2vw,1.85rem)] leading-[1.48] font-light text-primary-10/88 dark:text-white/88">
                             {translation("aboutDesc1")}
                         </p>
+                    </div>
 
-                        <div className="grid max-w-[1060px] gap-10 md:grid-cols-2 md:gap-14">
-                            <div>
-                                <div className="mb-4 h-1 w-14 bg-primary-6 dark:bg-primary-4" />
-                                <p className="text-[clamp(1rem,1.05vw,1.45rem)] leading-[1.52] font-light text-primary-10/76 dark:text-primary-10/74">
-                                    {translation("aboutDesc2")}
-                                </p>
-                            </div>
+                    <div className="border-l-0 border-primary-3/60 xl:border-l xl:pl-10 dark:border-primary-3/25">
+                        <div className="mb-7 h-1 w-28 bg-primary-4 dark:bg-primary-8" />
 
-                            <div>
-                                <div className="mb-4 h-1 w-14 bg-primary-6 dark:bg-primary-4" />
-                                <p className="text-[clamp(1rem,1.05vw,1.45rem)] leading-[1.52] font-light text-primary-10/76 dark:text-primary-10/74">
-                                    {translation("aboutDesc3")}
-                                </p>
-                            </div>
+                        <div className="space-y-7">
+                            {narrativeItems.map((item, index) => (
+                                <div key={item} className="grid gap-4 sm:grid-cols-[48px_1fr]">
+                                    <span className="text-sm font-semibold tracking-[0.18em] text-primary-5/72 dark:text-primary-9/72">
+                                        0{index + 1}
+                                    </span>
+                                    <p className="text-base leading-[1.72] font-light text-primary-10/76 md:text-lg dark:text-white/72">
+                                        {item}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section className="bg-primary-1 text-primary-6 min-h-[100dvh] pt-[var(--header-height)] dark:bg-primary-2 dark:text-white">
-            <div className="container min-h-[calc(100dvh_-_var(--header-height))] flex flex-col justify-center xl:flex-row xl:items-end">
+        <section className="border-y border-primary-3/40 bg-primary-2 text-primary-6 dark:border-primary-3/20 dark:bg-primary-5 dark:text-white">
+            <div className="container px-8 py-20 lg:px-16 lg:py-28">
+                <div className="mb-12 max-w-4xl">
+                    <p className="mb-4 text-sm font-semibold tracking-[0.24em] text-primary-6/70 uppercase dark:text-white/70">
+                        Uizzy
+                    </p>
+                    <h2 className="text-[clamp(2.5rem,5vw,4rem)]/[0.98] font-semibold">
+                        {translation("essenceTitle")}
+                    </h2>
+                </div>
+
+                <div className="grid xl:grid-cols-3">
                 <EssenceCard icon={<EyeOutlined />} 
                 title={translation("visionTitle")}
-                description={translation("visionDesc")} 
-                className="xl:rounded-tl-2xl" />
-
-                <div className="divider xl:hidden" style={{
-                    background: `linear-gradient(
-                to right, 
-                #A576FF, 
-                #A576FF 50%,
-                transparent 50%,
-                transparent 80%,
-                #A576FF 80%,
-                #A576FF 100%
-                )`}}></div>
+                description={translation("visionDesc")} />
 
                 <EssenceCard icon={<AimOutlined />} 
                 title={translation("missionTitle")}
-                description={translation("missionDesc")}
-                className="xl:pt-48 xl:rounded-t-2xl xl:bg-primary-3 dark:xl:bg-primary-4" biggerText={true} />
-
-                <div className="divider xl:hidden" style={{
-                    background: `linear-gradient(
-                to right, 
-                #A576FF, 
-                #A576FF 20%,
-                transparent 20%,
-                transparent 50%,
-                #A576FF 50%,
-                #A576FF 100%
-                )`}}></div>
+                description={translation("missionDesc")} />
 
                 <EssenceCard icon={<RubyOutlined />} 
                 title={translation("valuesTitle")}
-                description={translation("valuesDesc")}
-                className="xl:rounded-tr-2xl" />
+                description={translation("valuesDesc")} />
 
+                </div>
             </div>
         </section>
 
-        <section className="p-8 text-primary-6 bg-primary-1 text-center min-h-[100dvh] pt-[var(--header-height)] border-t border-primary-3/40 dark:text-white dark:bg-[#0D0914]">
-            <div className="container min-h-[calc(100dvh_-_var(--header-height))] flex flex-col justify-center">
-                <h2 className="text-[clamp(2.4rem,4.8vw,3.8rem)]/[1] font-bold text-primary-6 dark:text-white mb-8">
-                    {translation("ourTeam")}
-                </h2>
+        <section className="bg-primary-1 text-primary-6 dark:bg-[#0D0914] dark:text-white">
+            <div className="container px-8 py-20 lg:px-16 lg:py-28">
+                <div className="grid gap-12 xl:grid-cols-[0.4fr_1fr] xl:gap-16">
+                    <div>
+                        <p className="mb-4 text-sm font-semibold tracking-[0.24em] text-primary-6/70 uppercase dark:text-primary-9/70">
+                            Uizzy
+                        </p>
+                        <h2 className="text-[clamp(2.6rem,5vw,4rem)]/[0.96] font-semibold text-primary-6 dark:text-white">
+                            {translation("ourTeam")}
+                        </h2>
+                    </div>
 
-                <div className="flex flex-col items-center justify-center lg:flex-wrap lg:flex-row lg:justify-start gap-y-12">
+                    <div className="grid gap-x-12 lg:grid-cols-2">
                     <CollaboratorCard image={"/logo.svg"}
                         name="Ahmad Neto"
                         description="CEO - Chief Executive Officer" links={
@@ -168,6 +166,7 @@ export default function About() {
                                 icon: <LinkedinFilled />
                             }]
                         } />
+                    </div>
                 </div>
             </div>
         </section>
