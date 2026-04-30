@@ -9,7 +9,7 @@ import { LinkedinFilled } from "@ant-design/icons"
 import { useLocale } from "next-intl"
 import { DM_Sans } from "next/font/google"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Context from "./AppContext"
 
 const dmSans = DM_Sans({
@@ -24,6 +24,22 @@ export default function AppProvider({ children }: { children: React.ReactNode })
     const locale = useLocale();
 
     const [themeValue, setThemeValue] = useState<ThemeOption>("light");
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initialTheme: ThemeOption = savedTheme === "dark" || (!savedTheme && prefersDark) ? "dark" : "light";
+
+        setThemeValue((currentTheme) => {
+            if (currentTheme === initialTheme) {
+                return currentTheme;
+            }
+
+            return initialTheme;
+        });
+
+        document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    }, []);
 
     const contextConfig: AppContextType = {
         themeContext: { themeValue, setThemeValue },

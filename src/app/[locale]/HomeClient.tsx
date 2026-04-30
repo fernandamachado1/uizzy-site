@@ -215,7 +215,7 @@ export default function HomeClient({ messages }: { messages: HomeClientMessages 
         </div>
       </section>
 
-      <section id="contact" className="bg-primary-2 dark:bg-black text-primary-10 dark:text-primary-10 relative overflow-hidden border-t border-primary-3/40 dark:border-primary-3/20 scroll-mt-[var(--header-height)]">
+      <section id="contact" className="bg-primary-1 dark:bg-black text-primary-10 dark:text-primary-10 relative overflow-hidden border-t border-primary-3/40 dark:border-primary-3/20 scroll-mt-[var(--header-height)]">
         <div className="container px-8 py-16 lg:px-16 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-5">

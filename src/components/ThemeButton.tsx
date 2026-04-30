@@ -3,7 +3,6 @@
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Button, ConfigProvider, Switch } from "@/lib/antd";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 import { useAppContext } from "./default/AppContext";
 
 export default function ThemeButton({ className }: { className?: string }) {
@@ -11,24 +10,10 @@ export default function ThemeButton({ className }: { className?: string }) {
     const staticTranslation = useTranslations("_static");
 
     const { themeContext } = useAppContext();
-
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark").matches;
-
-        const shouldBeDark = savedTheme === "dark" || (!savedTheme && prefersDark);
-        setIsDarkMode(shouldBeDark);
-        themeContext.setThemeValue(shouldBeDark ? "dark" : "light")
-
-        document.documentElement.classList.toggle("dark", shouldBeDark);
-    }, []);
+    const isDarkMode = themeContext.themeValue === "dark";
 
     const toggleTheme = () => {
         const newTheme = !isDarkMode;
-
-        setIsDarkMode(newTheme);
 
         document.documentElement.classList.toggle("dark", newTheme);
         localStorage.setItem("theme", newTheme ? "dark" : "light");
