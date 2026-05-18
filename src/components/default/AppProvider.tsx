@@ -23,12 +23,11 @@ export default function AppProvider({ children }: { children: React.ReactNode })
 
     const locale = useLocale();
 
-    const [themeValue, setThemeValue] = useState<ThemeOption>("light");
+    const [themeValue, setThemeValue] = useState<ThemeOption>("dark");
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const initialTheme: ThemeOption = savedTheme === "dark" || (!savedTheme && prefersDark) ? "dark" : "light";
+        const initialTheme: ThemeOption = savedTheme === "light" ? "light" : "dark";
 
         setThemeValue((currentTheme) => {
             if (currentTheme === initialTheme) {
@@ -83,7 +82,7 @@ export default function AppProvider({ children }: { children: React.ReactNode })
 
     return <Context value={contextConfig}>
 
-        <html lang={locale}>
+        <html lang={locale} className={themeValue === "dark" ? "dark" : undefined}>
             <body suppressHydrationWarning className={`${dmSans.variable} antialiased bg-neutral-1`}>
 
                 <ConfigProvider theme={{

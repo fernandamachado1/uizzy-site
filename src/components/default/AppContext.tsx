@@ -5,7 +5,7 @@ import { createContext, useContext } from "react";
 
 const defaultValue: AppContextType = {
     themeContext: {
-        themeValue: "light",
+        themeValue: "dark",
         setThemeValue: () => {},
     },
     blogContext: {

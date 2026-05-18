@@ -7,9 +7,9 @@ export default function ButtonPrimary({ bgColor, text, icon, size, className }: 
                 Button: {
                     defaultHoverBorderColor: "var(--primary-7)",
                     defaultColor: "white",
-                    defaultHoverColor: "var(--primary-6)",
+                    defaultHoverColor: "currentColor",
                     defaultBorderColor: "none",
-                    defaultActiveColor: "var(--primary-9)",
+                    defaultActiveColor: "currentColor",
                     defaultActiveBorderColor: "var(--primary-9)"
             }
         }

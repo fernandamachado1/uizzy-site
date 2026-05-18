@@ -2,10 +2,22 @@ export default {
     historyLabel: "Nossa História",
     aboutTitle: "Conheça Nossa Jornada",
 
-    aboutDesc1: "Na Uizzy, acreditamos que soluções tecnológicas só fazem sentido quando têm impacto real. Por isso, desde o início da nossa jornada, unimos excelência técnica, escuta ativa e olhar estratégico para transformar desafios em sistemas digitais sob medida.",
-    aboutDesc2: "Somos especialistas em criar soluções personalizadas que respeitam o contexto e os objetivos de cada cliente. Mapeamos dores, redesenhamos processos e desenvolvemos plataformas robustas, com foco em performance, usabilidade e valor de negócio. Tudo isso com uma metodologia clara, colaborativa e orientada a resultado.",
-    aboutDesc3: "Ao longo dos anos, construímos uma forma própria de trabalhar: próxima, eficiente e comprometida com a entrega de valor, da imersão inicial à evolução contínua do projeto.",
-    aboutDesc4: "Procuramos ser parceiros na construção de soluções que destravam caminhos e aceleram crescimento.",
+    aboutDesc1: "Na Uizzy, transformamos desafios complexos em soluções digitais sob medida. Unimos tecnologia de ponta e escuta ativa para impulsionar o crescimento do seu negócio.",
+    aboutDesc2: "Mapeamos dores e redesenhamos processos para desenvolver plataformas robustas com foco total em performance e usabilidade excepcional.",
+    aboutDesc3: "Construímos uma jornada de trabalho próxima e eficiente, garantindo entregas de valor desde a imersão inicial até a evolução contínua.",
+    aboutDesc4: "Somos parceiros na construção de soluções que destravam caminhos. Seu crescimento é o nosso combustível diário.",
+
+    aboutCta: "Vamos Iniciar um Projeto",
+
+    essenceEyebrow: "Pilares do trabalho",
+    essenceLead: "Visão, missão e valores orientam como planejamos, entregamos e evoluímos cada projeto.",
+
+    proofItem1Title: "Especialistas em Impacto",
+    proofItem1Desc: "Mapeamos dores e redesenhamos processos para gerar valor real.",
+    proofItem2Title: "Metodologia Transparente",
+    proofItem2Desc: "Construímos entregas consistentes da imersão à evolução contínua.",
+    proofItem3Title: "Parceria Estratégica",
+    proofItem3Desc: "Somos parceiros na construção de soluções que aceleram o crescimento.",
 
     visionTitle: "Visão",
     visionDesc: "Vislumbramos um futuro de prosperidade e crescimento contínuo, onde a Uizzy se destaca pela excelência técnica, inovação e satisfação de seus clientes.",
@@ -16,6 +28,6 @@ export default {
     valuesTitle: "Valores",
     valuesDesc: "Respeito, transparência, inovação, Personalização, dedicação, comunicação",
 
-    essenceTitle: "Missão, visão e valores",
+    essenceTitle: "Propósito e cultura",
     ourTeam: "Nosso Time"
 } as const;

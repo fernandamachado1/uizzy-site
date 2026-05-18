@@ -6,18 +6,17 @@ interface IEssenceCardProperties {
 }
 
 export default function EssenceCard({ icon, title, description, className }: IEssenceCardProperties) {
-    return <article className={`group border-t border-primary-3/55 py-8 md:py-10 xl:border-t-0 xl:border-l xl:px-8 xl:py-0 first:xl:border-l-0 dark:border-primary-3/25 ${className}`}>
+    return <article className={`border-l border-white/12 px-7 py-8 first:border-l-0 lg:px-8 lg:py-0 ${className}`}>
         <div className="mb-6 flex items-center gap-4">
-            <span className="flex size-14 items-center justify-center border border-primary-4/50 text-3xl text-primary-6 dark:border-primary-8/35 dark:text-primary-9">
+            <span className="flex size-14 items-center justify-center border border-white/20 text-[1.9rem] text-white/88">
                 {icon}
             </span>
-
-            <h3 className="text-[clamp(1.65rem,2vw,2.25rem)]/[0.96] font-semibold text-primary-6 dark:text-white">
+            <h3 className="text-[clamp(1.45rem,1.9vw,2.2rem)]/[0.96] font-semibold tracking-[-0.04em] text-white">
                 {title}
             </h3>
         </div>
 
-        <p className="max-w-xl text-base leading-[1.7] font-light text-primary-6/82 md:text-lg dark:text-white/78">
+        <p className="max-w-xl text-[clamp(1rem,1.1vw,1.12rem)] leading-[1.75] font-light text-white/82">
             {description}
         </p>
     </article>

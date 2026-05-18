@@ -2,10 +2,22 @@ export default {
     historyLabel: "Our Story",
     aboutTitle: "Discover Our Journey",
 
-    aboutDesc1: "At Uizzy, we believe technology only makes sense when it drives real impact. That’s why, since day one, we’ve combined technical excellence, active listening, and a strategic mindset to turn challenges into custom digital solutions.",
-    aboutDesc2: "We specialize in building tailored systems that respect each client’s context and goals. From identifying operational challenges to redesigning processes, we develop platforms that focus on performance, usability, and business value, all guided by a clear, collaborative, and results-driven methodology.",
-    aboutDesc3: "Over the years, we’ve shaped our own way of working: collaborative, efficient, and committed to delivering value from initial discovery through ongoing evolution.",
-    aboutDesc4: "We aim to be true partners in building solutions that remove barriers and accelerate growth.",
+    aboutDesc1: "At Uizzy, we turn complex challenges into tailored digital solutions. We combine cutting-edge technology and active listening to drive your business growth.",
+    aboutDesc2: "We map pain points and redesign processes to build robust platforms with a total focus on exceptional performance and usability.",
+    aboutDesc3: "We build a close and efficient way of working, delivering value from the initial discovery through ongoing evolution.",
+    aboutDesc4: "We are partners in building solutions that remove barriers. Your growth is our daily fuel.",
+
+    aboutCta: "Let's Start a Project",
+
+    essenceEyebrow: "Working principles",
+    essenceLead: "Vision, mission, and values shape how we plan, deliver, and evolve each project.",
+
+    proofItem1Title: "Impact Specialists",
+    proofItem1Desc: "We map pain points and redesign processes to create real value.",
+    proofItem2Title: "Transparent Method",
+    proofItem2Desc: "We deliver consistent work from discovery to ongoing evolution.",
+    proofItem3Title: "Strategic Partnership",
+    proofItem3Desc: "We are partners in building solutions that accelerate growth.",
 
     visionTitle: "Vision",
     visionDesc: "We see a future of ongoing growth and prosperity, where Uizzy stands out for its technical excellence, trailblazing innovation and unwavering client satisfaction.",
@@ -16,6 +28,6 @@ export default {
     valuesTitle: "Values",
     valuesDesc: "Respect, transparency, innovation, customization, dedication, communication",
 
-    essenceTitle: "Mission, vision and values",
+    essenceTitle: "Purpose and culture",
     ourTeam: "Our Team"
 } as const;
